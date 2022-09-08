@@ -41,7 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
   //Loading counter value on start
   Future<void> _loadCounter() async {
     for (var counter in counters) {
-      counter.loadCounter();
+      setState(() {
+        counter.loadCounter();
+      });
     }
   }
 
