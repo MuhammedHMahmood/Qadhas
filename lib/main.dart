@@ -41,14 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
   //Loading counter value on start
   Future<void> _loadCounter() async {
     for (var counter in counters) {
-      setState(() {
-        counter.loadCounter();
-      });
+      await counter.loadCounter();
+      setState(() { });
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    _loadCounter();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
